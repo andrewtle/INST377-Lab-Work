@@ -7,14 +7,16 @@
 
 <body>
     
-    <h1 class ='title'> 
-        Andrew Le Lab 2: CSS Selectors 
-    </h1>
-    
-    <nav>
-        <a href='selectors.html'> Selectors  </a>
-        <a href='index.html'>   Main Page  </a>
-    </nav>
+    <div class='wrapper'>
+        <h1 class ='title'> 
+            Andrew Le Lab 2: CSS Selectors 
+        </h1>
+        
+        <nav>
+            <a href='selectors.html'> Selectors  </a>
+            <a href='index.html'>   Main Page  </a>
+        </nav>
+    </div>
 
     <h2> First, the basics. </h2>
 
@@ -28,9 +30,10 @@
             <li> And other web development frameworks </li>
         </ul>
 
-        <p> You should list your top 3 goals for the class below. </p>
+        
 
         <ol>
+            <p class='default'> Top 3 Goals </p>
             <li> Get an A </li>
             <li> Become familiar with HTML, Javascript, and CSS </li>
             <li> Working with tohers in a technical aspect </li>
@@ -38,7 +41,7 @@
     </div>
 
     <div class="section_2">
-        <h2> Trying Inline Elements </h2>
+        <h2 class='subtitle'> Let's Try Some Inline Elements </h2>
 
         <p> I want to <em> draw attention to something </em> in this line of text. </p>
         
@@ -47,29 +50,31 @@
         <p> Sometimes I want to <em> <strong> use both of these elements. </em></strong> </p>
     </div>
 
-    <h3> Empty Elements </h3>
-    <p> Soft line breaks can't wrap anything. <br/> Neither can image tags, or hard lines. <br/>
-      Add a hard line under here, and break the previous two lines using a soft line break. </p>
-    <hr/>
+    <br/>
+
+    <div class='section_3'>
+        <h3> Empty Elements </h3>
+        <p> Soft line breaks can't wrap anything. <br/> Neither can image tags, or hard lines. <br/>
+        Add a hard line under here, and break the previous two lines using a soft line break. </p>
+        <hr/>
+    </div>
+
 
     <div class = 'section_4'>
-    <div class = 'left'>
-    <h2> Images </h2>
-        <p> These are the four mochi images from the tutorial. </p>
+        <div class = 'left'>
+            <h2> Images </h2>
+            <p> These are the four mochi images from the tutorial. </p>
 
-        <p> Don't forget to use alt text on your images. It's important for accessibility. </p>
-    </div>
-    </div>
-
-    <div class = 'section_4'>
-    <div class = 'grid'>
-    <div class="slides">
-        <img src='images/mochi.gif' width='75' alt='A mochi ball in a bubble'/>
-        <img src='images/mochi.jpg' width='75' alt='A dancing mochi ball'/>
-        <img src='images/mochi.png' width='75' alt='A mochi ball'/>
-        <img src='images/mochi.svg' alt='A mochi ball with Bézier handles'/>
-    </div>
-    </div>
+            <p> Don't forget to use alt text on your images. It's important for accessibility. </p>
+        </div>
+        <div class = 'carousel'>
+            <div class="slides">
+                <img src='images/mochi.gif' width='75' alt='A mochi ball in a bubble'/>
+                <img src='images/mochi.jpg' width='75' alt='A dancing mochi ball'/>
+                <img src='images/mochi.png' width='75' alt='A mochi ball'/>
+                <img src='images/mochi.svg' alt='A mochi ball with Bézier handles'/>
+            </div>
+        </div>
     </div>
 
     <hr/>
