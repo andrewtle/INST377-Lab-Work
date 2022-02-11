@@ -4,6 +4,17 @@
     box-sizing: border-box;
   }
   
+  .title {
+    display: inline-block;
+    background-color: rgba(0,139, 139,0.8);
+    border-radius: 0px;
+    padding: 10px 10px;
+    margin: 0;
+    margin-bottom: 0px;
+    display: flex;
+    font-size: 15px;
+  }
+
   .menu-container {
     color: #fff;
     background-color: #5995DA;  /* Blue */
@@ -16,13 +27,17 @@
     border: 1px solid #fff;  /* For debugging */
     width: 900px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 
   .links {
     border: 1px solid #fff;  /* For debugging */
     display: flex;
     justify-content: flex-end;
+  }
+
+  .signup {
+      margin-left: auto;
   }
   
   .login {
@@ -45,8 +60,61 @@
     align-items: stretch;
   }
 
-  .social,
-  .logo,
+  .social {
+      align-self: flex-end;
+      margin-bottom: 20px;
+  }
+  .logo {
+      align-self: center; 
+  }
   .subscribe {
-      border: 1px solid #5995DA
+      align-self: flex-end;
+      margin-bottom: 20px;
+  }
+
+  .photo-grid-container {
+      display: flex;
+      justify-content: center;
+  }
+
+  .photo-grid {
+      width: 900px;
+      display: flex; 
+      justify-content: center;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: row-reverse;
+  }
+
+  .first-item {
+      order: 1;
+  }
+
+  .last-item {
+      order: -1;
+  }
+
+  .photo-grid-item {
+      border: 1px solid #fff;
+      width: 300px;
+      height: 300px; 
+  }
+
+  .footer {
+      display: flex;
+      justify-content: space-between;
+  }
+
+  .footer-item {
+      border: 1px solid #fff;
+      background-color: #D6E9FE;
+      height: 200px;
+      flex: 1;
+  }
+
+
+  .footer-three, .footer-one {
+      background-color: #5995DA;
+      flex: initial;
+      width: 300px;
   }
