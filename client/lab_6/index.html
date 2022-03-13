@@ -1,0 +1,72 @@
+<!DOCTYPE html> 
+<html class="has-background-info-dark"> 
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Andrew Le Lab 6: Handling JSON Responses from REST-ful APIs</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <link rel='stylesheet' href='styles.css'/>
+    </head>
+
+    <body>
+        <section class="section">
+            <div class="container">
+                <div class="box has-background-danger-light">
+                    Andrew Le Lab 5
+                </div>
+
+                <div class="columns">
+                    <div class="column is-one-quarter is-offset-one-fifth">
+                        <div class="box">
+                            <form action="https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json" method="get">
+                                <div class="field">
+                                    <label class="label">First Name</label>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="Your Name">
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Food Preference</label>
+                                    <div class="control">
+                                        <input class="input" type="text" placeholder="Preference">                                        
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Veggie or Vegan?</label>
+                                    <div class="control">
+                                        <label class="radio">
+                                            <input type="radio" name="question">
+                                            Yes
+                                        </label>
+                                        <label class="radio">
+                                            <input type="radio" name="question">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <div class="control">
+                                        <button class="button is-link"> Submit </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="column is-two-fifths">
+                        <div class="card">
+                          <div class="card-content">
+                            <div class="content">
+                              This is going to be something in two weeks.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
