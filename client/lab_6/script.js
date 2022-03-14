@@ -1,85 +1,22 @@
-/*async function mainEvent() { // the async keyword means we can make API requests
-  const form = document.querySelector('.main_form');
-  form.addEventListener('submit', async (submitEvent) => { // async has to be declared all the way to get an await
-    submitEvent.preventDefault(); // This prevents your page from refreshing!
-    console.log('form submission'); // this is substituting for a "breakpoint"
-    const results = await fetch('/api/foodServicesPG'); // This accesses some data from our API
-    const arrayFromJson = await results.json(); // This changes it into data we can use - an object
-    console.table(arrayFromJson.data); // this is called "dot notation"
-    // arrayFromJson.data - we're accessing a key called 'data' on the returned object
-    // it contains all 1,000 records we need
-  });
-}
-
-// this actually runs first! It's calling the function above
-document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
-*/
-
 async function setup() {
-  /**
-   * API Endpoint
-   *
-   * @type {string}
-   */
+
   const endpoint = "https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json";
 
-  /**
-   * API Search Request
-   *
-   * @type {Object}
-   */
   let request = await fetch(endpoint);
 
-  /**
-   * API Search Result
-   *
-   * @type {Object}
-   */
   let data = await request.json();
 
-  /**
-   * Query Result Table
-   *
-   * @type {DOMElement}
-   */
   const table = document.querySelector("#result-table");
 
-  /**
-   * Query Result Table tbody
-   *
-   * @type {DOMElement}
-   */
   const tableResults = document.querySelector("#result-table-results");
 
-  /**
-   * Query No Results Notice
-   *
-   * @type {DOMElement}
-   */
   const noResults = document.querySelector("#no-results");
 
-  /**
-   * Search Query Form
-   *
-   * @type {DOMElement}
-   */
+
   const searchForm = document.querySelector("#search-form");
 
-  /**
-   * Search Query Term Input
-   *
-   * @type {DOMElement}
-   */
   const searchTerm = document.querySelector("#search-term");
 
-  /**
-   * Find search result matches by term
-   *
-   * @param {Object} Firing event
-   * @param {Object} Search Data
-   * @author Andrew Le
-   * @date 3/13/22
-   */
   function findMatches(e, data = []) {
     // Validate input
     if (searchTerm.value.length <= 2) {
@@ -122,9 +59,6 @@ async function setup() {
     const regex = new RegExp(term, "gi");
     const fragment = document.createDocumentFragment();
 
-    // Build Result Rows
-    // Limit to 26 results (Lag)
-    // We really should use pagination here
     (results || []).splice(0, 25).forEach((resturant) => {
       // Variables
       const tr = document.createElement('tr');
@@ -142,7 +76,6 @@ async function setup() {
     tableResults.appendChild(fragment);
   }
 
-  // Event Listeners
   searchForm.onsubmit = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -151,5 +84,4 @@ async function setup() {
   searchTerm.onkeyup = (e) => findMatches(e, data);
 }
 
-// Load API data automatically
 window.onload = (e) => setup();
