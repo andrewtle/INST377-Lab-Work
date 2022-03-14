@@ -77,8 +77,8 @@ async function setup() {
    *
    * @param {Object} Firing event
    * @param {Object} Search Data
-   * @author Alec M. <https://amattu.com>
-   * @date 2021-10-06T12:11:26-040
+   * @author Andrew Le
+   * @date 3/13/22
    */
   function findMatches(e, data = []) {
     // Validate input
@@ -107,13 +107,6 @@ async function setup() {
     buildResultUI(results);
   }
 
-  /**
-   * Build the result UI section
-   *
-   * @param {Array} [results=[]]
-   * @author Alec M. <https://amattu.com>
-   * @date 2021-10-06T13:02:53-040
-   */
   function buildResultUI(results = []) {
     // Validate input
     if (!results || !(results instanceof Array) || results.length <= 0) {
