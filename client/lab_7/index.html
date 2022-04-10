@@ -1,73 +1,79 @@
-<!DOCTYPE html> 
-<html class="has-background-info-dark"> 
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Andrew Le Lab 6: Handling JSON Responses from REST-ful APIs</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-        <link rel='stylesheet' href='styles.css'/>
-    </head>
-
-    <body class="p-3">
-        <div class="notification is-warning">
-          Andrew Le's Lab 7
-        </div>
-        <div class="columns is-centered is-desktop">
-          <div class="column is-3">
-            <form class="box" method="" action="" onsubmit="return false;" id="search-form">
-              <div class="field">
-                <label class="label">Search Term</label>
-                <div class="control">
-                  <input name="search_term" class="input" type="text" id="search-term">
-                </div>
-              </div>
-    
-              <div class="field">
-                <label class="label">Search By</label>
-                <div class="control">
-                  <label class="radio">
-                    <input type="radio" name="search_type" value="zip">
-                    Zip Code
-                  </label>
-                  <label class="radio">
-                    <input type="radio" name="search_type" value="name" checked>
-                    Resturant Name
-                  </label>
-                </div>
-              </div>
-    
-              <button class="button is-primary">Submit</button>
-          </form>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <title>Lab 7 - Map Markers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="p-3">
+    <div class="notification is-warning">
+      Andrew Le's Lab 7
+    </div>
+    <div class="columns is-centered is-desktop">
+      <div class="column is-4">
+        <form class="box" method="" action="" id="search-form">
+          <div class="field">
+            <label class="label">Search Term</label>
+            <div class="control">
+              <input name="search_term" class="input" type="text" id="search-term">
+            </div>
           </div>
-          <div class="column is-8">
-            <div class="card">
-              <div class="card-content">
-                <h3 class="title is-3">Resturant Search Results</h3>
-    
-                <!-- No result element -->
-                <div class="notification is-warning" id="no-results">
-                  Find resturants by entering your search query to the left.
-                </div>
-    
-                <!-- Result Element -->
-                <div class="table-container">
-                  <table class="table is-hidden is-fullwidth" id="result-table">
-                      <thead>
-                        <tr>
-                          <th>Name</th>
-                          <th>City</th>
-                          <th>State</th>
-                          <th>Zip</th>
-                          <th>Business Category</th>
-                        </tr>
-                      </thead>
-                      <tbody id="result-table-results"></tbody>
-                  </table>
-                </div>
-              </div>
+
+          <div class="field">
+            <label class="label">Search By</label>
+            <div class="control">
+              <label class="radio">
+                <input type="radio" name="search_type" value="zip" checked>
+                Zip Code
+              </label>
+              <label class="radio">
+                <input type="radio" name="search_type" value="name" disabled>
+                Resturant Name
+              </label>
+            </div>
+          </div>
+
+          <button class="button is-primary">Submit</button>
+        </form>
+        <div class="card">
+          <div class="card-content">
+            <h3 class="title is-4">Search Results</h3>
+
+            <!-- No result element -->
+            <div class="notification is-warning my-0" id="no-results">
+              Find resturants by entering your search query to the left.
+            </div>
+
+            <!-- Result Element -->
+            <div class="table-container">
+              <table class="table is-hidden is-fullwidth is-size-7" id="result-table">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Address</th>
+                      <th>City, State</th>
+                    </tr>
+                  </thead>
+                  <tbody id="result-table-results"></tbody>
+              </table>
             </div>
           </div>
         </div>
-        <script src="script.js"></script>
-      </body>
-    </html>
+      </div>
+      <div class="column is-8">
+        <div class="card">
+          <div class="card-content">
+            <h3 class="title is-3">Resturant Map</h3>
+
+            <div id="result-map"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
