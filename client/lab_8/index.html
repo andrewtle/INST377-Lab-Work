@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 8 - JSON to Map Markers</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+   <link rel="stylesheet" href="styles.css"/>
+
+</head>
+<body>
+   <div class="wrapper">
+      <div class="container">
+        <div class="title">Andrew Le's Lab 8</div>
+
+        <div class="columns">
+        <div class="column is-narrow">
+
+          <form id="form" method="GET" class="main_form">
+            <div class="field">
+              <label class="label">Restaurant Name</label>
+              <div class="control">
+                <input class="input" type="text" id="resto_name">
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Zipcode</label>
+              <div class="control">
+                <input class="input" type="text" id="zipcode">
+              </div>
+            </div>
+
+            <div class="legacy-form-row">
+              <legend>Veggie or Vegan?</legend>
+              <input id='yes' name='answer' type='radio' value='yes' />
+              <label for='yes' class='radio-label'>Yes</label>
+              <input id='no' name='answer' type='radio' value='no'/> 
+              <label for='no' class='radio-label'>No</label>
+            </div>
+
+            <div class="submit_button"></div>
+            <button class="button" type="submit">Load List</button>
+          </form>
+        </div>
+
+        <div class="column is-two-thirds">
+          <div id="third_box" class="box">
+            <div id="map"></div>
+            <h2>Restaurants List</h2>
+            <ul id="resto-list"></ul>
+
+          </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
