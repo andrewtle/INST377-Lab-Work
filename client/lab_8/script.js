@@ -70,7 +70,7 @@ function getRandomIntInclusive(min, max) {
     const retrievalVar = 'restaurants';
     submit.style.display = 'none';
   
-    if (localStorage.getItem(retrievalVar) === undefined) {
+    if (localStorage.getItem(retrievalVar) === null) {
       const results = await fetch('/api/foodServicesPG');
       const arrayFromJson = await results.json();
       console.log(arrayFromJson);
